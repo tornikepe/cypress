@@ -1,77 +1,54 @@
-describe("template spec", () => {
-  it("passes", () => {
+describe("Homework 12", () => {
+  it("Edit Account Details", () => {
     // შევდივართ საიტზე https://automationteststore.com/
-    // ვაკლიკავთ Login or register ღილაკს
-    // ვწერთ იუზერს
-    // ვწერთ პაროლს
-    // ვაკლიკავთ Login ღილაკს
-    // ვაკლიკავთ Edit account details ღილაკს
-    // ვშლით First Name input-ში არსებულ ტექსტს
-    // ვწერთ ახლიდან First Name-ს
-    // ვშლით Last Name input-ში არსებულ ტექსტს
-    // ვწერთ ახლიდან Last Name-ს
-    // ვშლით email-ს
-    // ვწერთ ახლიდან email-ს
-    // ვშლით Telephone-ს
-    // ვწერთ ახლიდან Telephone-ს
-    // ვშლით Fax-ს
-    // ვწერთ ახლიდან Fax-ს
-    // ვკლიკავთ Continue ღილაკს
-    // ვამოწმებთ თუ გამოდის ტექსტი "Success: Your account has been successfully updated."
     cy.visit("https://automationteststore.com/");
-    cy.get("#customer_menu_top > li > a").click();
-    cy.get("#loginFrm_loginname").type("tornike");
-    cy.get("#loginFrm_password").type("tornike");
-    cy.get("#loginFrm > fieldset > .btn").click();
+
+    // ვიყენებთ Custom Commands
+    cy.login("tornike", "tornike");
+
+    // ვაკლიკავთ Edit account details ღილაკს
     cy.get(".side_account_list > :nth-child(3) > a").click();
+
+    // ვშლით First Name input-ში არსებულ ტექსტს
     cy.get("#AccountFrm_firstname").clear();
+
+    // ვწერთ ახლიდან First Name-ს
     cy.get("#AccountFrm_firstname").type("Tornikee");
+
+    // ვშლით Last Name input-ში არსებულ ტექსტს
     cy.get("#AccountFrm_lastname").clear();
+
+    // ვწერთ ახლიდან Last Name-ს
     cy.get("#AccountFrm_lastname").type("Peitrishvili");
+
+    // ვშლით email-ს
     cy.get("#AccountFrm_email").clear();
+
+    // ვწერთ ახლიდან email-ს
     cy.get("#AccountFrm_email").type("testo@gmail.com");
+
+    // ვშლით Telephone-ს
     cy.get("#AccountFrm_telephone").clear();
+
+    // ვწერთ ახლიდან Telephone-ს
     cy.get("#AccountFrm_telephone").type("591889212");
+
+    // ვშლით Fax-ს
     cy.get("#AccountFrm_fax").clear();
+
+    // ვწერთ ახლიდან Fax-ს
     cy.get("#AccountFrm_fax").type("test");
+
+    // ვკლიკავთ Continue ღილაკს
     cy.get(".col-md-12 > .btn-orange").click();
+
+    // ვამოწმებთ თუ გამოდის ტექსტი "Success: Your account has been successfully updated."
     cy.contains("Success: Your account has been successfully updated.").should(
       "be.visible"
     );
   });
-});
 
-describe("template spec", () => {
-  it("passes", () => {
-    // შევდივართ საიტზე https://automationteststore.com/
-    // ვაკლიკავთ Login or register ღილაკს
-    // ვწერთ იუზერს
-    // ვწერთ პაროლს
-    // ვაკლიკავთ Login ღილაკს
-    // ვაკლიკავთ Change Password ღილაკს
-    // ვწერთ Current Password-ს
-    // ვწერთ New Password-ს
-    // ვწერთ New Password Confirm-ს
-    // ვაკლიკავთ Continue ღილაკს
-    // ვამოწმებთ თუ გამოდის ტექსტი "Success: Your password has been successfully updated."
-    cy.visit("https://automationteststore.com/");
-    cy.get("#customer_menu_top > li > a").click();
-    cy.get("#loginFrm_loginname").type("tornike");
-    cy.get("#loginFrm_password").type("tornike");
-    cy.get("#loginFrm > fieldset > .btn").click();
-    cy.get(".side_account_list > :nth-child(4) > a").click();
-    cy.get("#PasswordFrm_current_password").type("tornike");
-    cy.get("#PasswordFrm_password").type("tornike");
-    cy.get("#PasswordFrm_confirm").type("tornike");
-    cy.get(".col-md-12 > .btn-orange").click();
-    cy.contains("Success: Your password has been successfully updated.").should(
-      "be.visible"
-    );
-  });
-});
-
-describe("template spec", () => {
-  it("passes", () => {
+  it("New Address", () => {
     // შევდივართ საიტზე https://automationteststore.com/
     // ვაკლიკავთ Login or register ღილაკს
     // ვწერთ იუზერს
@@ -135,6 +112,33 @@ describe("template spec", () => {
       "have.attr",
       "href",
       "https://automationteststore.com/index.php?rt=account/address/insert"
+    );
+  });
+
+  it("Change Password", () => {
+    // შევდივართ საიტზე https://automationteststore.com/
+    // ვაკლიკავთ Login or register ღილაკს
+    // ვწერთ იუზერს
+    // ვწერთ პაროლს
+    // ვაკლიკავთ Login ღილაკს
+    // ვაკლიკავთ Change Password ღილაკს
+    // ვწერთ Current Password-ს
+    // ვწერთ New Password-ს
+    // ვწერთ New Password Confirm-ს
+    // ვაკლიკავთ Continue ღილაკს
+    // ვამოწმებთ თუ გამოდის ტექსტი "Success: Your password has been successfully updated."
+    cy.visit("https://automationteststore.com/");
+    cy.get("#customer_menu_top > li > a").click();
+    cy.get("#loginFrm_loginname").type("tornike");
+    cy.get("#loginFrm_password").type("tornike");
+    cy.get("#loginFrm > fieldset > .btn").click();
+    cy.get(".side_account_list > :nth-child(4) > a").click();
+    cy.get("#PasswordFrm_current_password").type("tornike");
+    cy.get("#PasswordFrm_password").type("tornike");
+    cy.get("#PasswordFrm_confirm").type("tornike");
+    cy.get(".col-md-12 > .btn-orange").click();
+    cy.contains("Success: Your password has been successfully updated.").should(
+      "be.visible"
     );
   });
 });
