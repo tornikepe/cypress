@@ -1,0 +1,19 @@
+{
+    "title":"Mr.",
+    "name":"tornike",
+    "email":"testovich12@gmail.com",
+    "password":"test1234",
+    "day":"11",
+    "month":"October",
+    "year":"2002",
+    "firstname":"tornike",
+    "lastname":"peitrishvili",
+    "company":"test",
+    "address":"test",
+    "address2":"test",
+    "country":"Canada",
+    "state":"test",
+    "city":"Tbilisi",
+    "zipcode":"0144",
+    "mobilenumber":"123123123"
+}
